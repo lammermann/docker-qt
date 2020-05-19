@@ -21,7 +21,7 @@ cd /opt && \
 git clone https://github.com/mxe/mxe.git && \
 cd /opt/mxe && \
 NPROC=$(($(nproc)+4)) && \
-make --jobs=$NPROC JOBS=$NPROC MXE_TARGETS='x86_64-w64-mingw32.static' qtbase && \
+make --jobs=$NPROC JOBS=$NPROC MXE_TARGETS='x86_64-w64-mingw32.static' qtbase qtcharts qtdeclarative qtquickcontrols qtquickcontrols2 && \
 ln -s /opt/mxe/usr/bin/x86_64-w64-mingw32.static-qmake-qt5 /usr/bin/qmake && \
 qmake --version && \
 exit 0
