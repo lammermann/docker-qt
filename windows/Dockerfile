@@ -1,19 +1,20 @@
 FROM ubuntu:latest
 ENTRYPOINT ["/bin/bash"]
 
+ARG DEBIAN_FRONTEND="noninteractive"
 RUN \
-apt -y update && \
-apt -y upgrade && \
-apt -y install build-essential iputils-ping nano \
+apt-get -y update && \
+apt-get -y upgrade && \
+apt-get -y install build-essential iputils-ping nano \
     autoconf automake autopoint bash bison bzip2 flex gettext \
     git g++ gperf intltool libffi-dev libgdk-pixbuf2.0-dev \
     libtool-bin libltdl-dev libssl-dev libxml-parser-perl lzip make \
     openssl p7zip-full patch perl pkg-config python ruby scons \
     sed unzip wget xz-utils \
     g++-multilib libc6-dev-i386 && \
-apt -y autoremove && \
-apt -y autoclean && \
-apt -y clean && \
+apt-get -y autoremove && \
+apt-get -y autoclean && \
+apt-get -y clean && \
 exit 0
 
 RUN \
